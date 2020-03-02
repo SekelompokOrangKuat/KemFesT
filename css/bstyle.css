@@ -123,3 +123,130 @@ a {text-decoration: none;}
     color: black;
     font-size: 20px;
 }
+
+/*.box{
+    width: 400px;
+    height: 100px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    text-align: center;
+}*/
+
+.box input{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 70%;
+    border: 1px solid #999;
+    outline: none;
+    font-family: Oswald;
+    font-weight: bold;
+    margin-left: 14%;
+}
+
+.box input:focus{
+    border-color: #FF914D;
+    box-shadow: 0 0 8px 0 rgb(214, 44, 44);
+    transition: 0.2s;
+}
+
+.box h2{
+    text-align: center;
+    font-family: Oswald;
+    margin: 5px;
+    color: white;
+}
+
+.container{
+    background:#060631b8; 
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+}
+
+#popup {
+width: 100%;
+height: 100%;
+position: fixed;
+background: rgba(0,0,0,.7);
+top: 0;
+left: 0;
+z-index: 9999;
+visibility: hidden;
+}
+
+#popup:target {
+visibility: visible;
+}
+
+#popup2 {
+width: 100%;
+height: 100%;
+position: fixed;
+background: rgba(0,0,0,.7);
+top: 0;
+left: 0;
+z-index: 9999;
+visibility: hidden;
+}
+
+#popup2:target {
+visibility: visible;
+}
+
+.submit-button a{
+    color: white;
+    width: 10%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: auto;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(214, 44, 44);
+    font-family: Oswald;
+    font-weight: bold;
+    margin-left: 45%;
+}
+
+.submit-button input{
+    color: white;
+    width: 10%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(214, 44, 44);
+    font-family: Oswald;
+    font-weight: bold;
+    margin-left: 45%;
+}
+
+.submit-button h5{
+    text-align: center;
+    font-family: Oswald;
+    margin: 10px;
+    color: white;
+}
+
+.close-button {
+width: 20px;
+height: 20px;
+background: #000;
+border-radius: 50%;
+border: 3px solid #fff;
+display: block;
+text-align: center;
+color: #fff;
+text-decoration: none;
+position: absolute;
+top: 0px;
+right: 0px;
+}
