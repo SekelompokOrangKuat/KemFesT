@@ -1,4 +1,4 @@
-body{margin: 0; padding: 0; background: white;font-family: Oswald;}
+body{margin: 0; padding: 0; background: #004e92;font-family: Oswald;}
 a {text-decoration: none;}
 #navigation{
     margin: 0;
@@ -46,50 +46,74 @@ a {text-decoration: none;}
     float: left;
     margin-left: 20px;
     padding-top: 20px;
-    width: 50%;
+    width: 72%;
     height: 450px;
 }
-.table {
-    margin: 0 auto;
+.tier {
     width: 100%;
+    height: 400px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 5px;
+}
+.tier h1 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+    background: black;
+}
+.tier h1 a{
+    color: rgb(190, 190, 190);
+    text-decoration: underline;
+}
+.tier h1 a:hover {
+    color:rgb(112, 112, 112);
+    transition: .5s;
+}
+.viewmore{
+    position: ;
+    background: black;
+}
+.table {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-left:25px;
+    margin-right: 15px;
+}
+.table img{
+    margin-top: -20px;
+    width: 100%;
+    height: 100%;
+}
+.table h1{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 24px;
+    width:100%;
+    background: #00095c;
 }
 .table button{
-    margin-top: 20px;
+    top: 100%;
     width: 100%;
-    height: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border: none;
-    background: #000428;
+    background: #559c12;
     border-radius: 5px;
     font-family: Oswald;
-    font-size: 40px;
+    font-size: 20px;
     color: white;
     cursor: pointer;
 }
 .table button:hover {
-    background: #00095c;
-    color: white;
+    background: #3e720d;
+    color: rgb(192, 190, 190);
     transition: .5s;
-}
-.list {
-    /* display: none; */
-}
-.list ul {
-    margin: 0 auto;
-}
-.list li {
-    list-style: none;
-    text-align: center;
-    font-size: 40px;
-    text-transform: uppercase;
-}
-#list1 {
-    display: none;
-}
-#list2 {
-    display: none;
-}
-#list3 {
-    display: none;
 }
 
 #sidebar {
@@ -123,17 +147,6 @@ a {text-decoration: none;}
     color: black;
     font-size: 20px;
 }
-
-/*.box{
-    width: 400px;
-    height: 100px;
-    background: #fff;
-    border-radius: 10px;
-    position: relative;
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,.4);
-    text-align: center;
-}*/
 
 .box input{
     border-radius: 20px;
@@ -250,3 +263,4 @@ position: absolute;
 top: 0px;
 right: 0px;
 }
+
