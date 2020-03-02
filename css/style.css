@@ -1,0 +1,46 @@
+body{background: rgb(46, 46, 46)}
+
+.title {
+    color:white;
+    text-align: center;
+    margin-top: 10%;
+}
+.title a{
+    color:white;
+    text-decoration: none;
+}
+/* .title a:hover{
+    color: rgb(46, 46, 46);
+} */
+.title h1{
+    font-size: 80px;
+    /* text-decoration: underline; */
+    font-family: Oswald;
+}
+.title h2 {
+    font-size: 25px;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: -50px;
+    font-family: Open Sans;
+    font-weight: 500;
+}
+.title button{
+    margin-top: 40px;
+    background: none;
+    border: 3px solid white;
+    border-radius: 5px;
+    color : white;
+    width: 900px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+}
+.title button:hover {
+    background: white;
+    transition: .5s;
+}
+.title button:hover a{
+    color: rgb(46, 46, 46);
+}
