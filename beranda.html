@@ -16,9 +16,39 @@
             <li><a href="about-us.html">about us</a></li>
             <li><a href="ourteam.html">about us</a></li>
             <li><a href="faq.html">faq</a></li>
-        	<li><a href="register.html">login</a></li>
-        	<li><a href="register.html">register</a></li>
+            <li><a href="#popup">login</a></li>
+            <li><a href="#popup2">register</a></li>
         </ul>
+    </div>
+        <div id="popup">
+        <div class="container">
+            <div class="box">
+                <a href="#" class="close-button" title="Close">x</a>
+                <h2 id="heading">Login</h2>
+                <input type="text" name="type1" placeholder="Username" />
+                <input type="text" name="type2" placeholder="Password" />
+            </div>
+            <div class="submit-button">
+                <input type=button name="login" value="login"  >
+                <h5>Belum punya akun??</h5>
+                <input type=button name="login" value="Register" onclick="window.location.href='beranda.html#popup2'" >
+                
+            </div>
+        </div>
+    </div>
+    <div id="popup2">
+        <div class="container">
+            <div class="box">
+                <a href="#" class="close-button" title="Close">x</a>
+                <h2 id="heading">Register</h2>
+                <input type="text" name="type1" placeholder="Email" />
+                <input type="text" name="type2" placeholder="Username" />
+                <input type="text" name="type2" placeholder="Password" />
+            </div>
+            <div class="submit-button">
+                <input type=button name=Register value="register"  >
+            </div>
+        </div>
     </div>
     <div id="header-wrapper">
         <div class="header">
