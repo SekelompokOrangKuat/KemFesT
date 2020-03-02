@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="css/bstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="js/bjs.js"></script>
 </head>
 <body>
     <div id="navigation">
         <ul>
             <li><a href="#">home</a></li>
-            <li><a href="about.html">about us</a></li>
+            <li><a href="about-us.html">about us</a></li>
             <li><a href="faq.html">faq</a></li>
             <li><a href="login.html">login</a></li>
             <li><a href="register.html">register</a></li>
@@ -26,15 +27,43 @@
     <div id="content-wrapper">
         <div class="content">
             <div class="table">
-                <button>TIER 1</button>
+                <button onclick="openlist1()">TIER 1</button>
+                <div class="list" id="list1">
+                    <li>Hindia</li>
+                    <li>Feast</li>
+                    <li>Pamungkas</li>
+                    <li>the sigit</li>
+                    <li></li>
+                </div>
             </div>
             <div class="table">
-                <button>TIER 2</button>
+                <button onclick="openlist2()">TIER 2</button>
+                <div class="list" id="list2">
+                    <li>Hindia</li>
+                    <li>Feast</li>
+                    <li>Pamungkas</li>
+                    <li>the sigit</li>
+                    <li></li>
+                </div>
                 
             </div>
             <div class="table">
-                <button>TIER 3</button>
+                <button onclick="openlist3()">TIER 3</button>
+                <div class="list" id="list3">
+                    <li>Hindia</li>
+                    <li>Feast</li>
+                    <li>Pamungkas</li>
+                    <li>the sigit</li>
+                    <li></li>
+                </div>
             </div>
+        </div>
+        <div id="sidebar">
+            <div class="quote">
+                blablablablablablab <br>
+                blablabal <br>
+            </div>
+            <center><button><a href="pesan.html">Mulai Memilih</a></button></center>
         </div>
     </div>
 </body>
