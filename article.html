@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/articlestyle.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="js/pjs.js"></script>
+    <script src="js/ajs.js"></script>
 </head>
 <body>
     <div id="navigation">
@@ -16,18 +16,64 @@
             <li><a href="ourteam.html">about us</a></li>
             <li><a href="faq.html">faq</a></li>
             <li><a href="#">article</a></li>
-            <li><a href="#popup">login</a></li>
-            <li><a href="#popup2">register</a></li>
+            <li><a href="#" onclick="showPop()">login</a></li>
+            <li><a href="#" onclick="showReg()">register</a></li>
         </ul>
+    </div>
+    <div id="popup">
+        <div class="container">
+            <div class="box">
+                <h2 id="heading">Login</h2>
+                <input type="text" name="type1" placeholder="Username" />
+                <input type="text" name="type2" placeholder="Password" />
+            </div>
+                <center><button><a href="beranda.html">Login</a></button>
+                <button onclick="closePop()">Close</button>
+                </center>
+                <h5>Belum punya akun? <a href="#" onclick="showReg()">Daftar Sekarang!</a></h5>
+        </div>
+    </div>
+    <div id="popup2">
+        <div class="container">
+            <div class="box">
+                <h2 id="heading">Register</h2>
+                <input type="text" name="type1" placeholder="Email" />
+                <input type="text" name="type2" placeholder="Username" />
+                <input type="text" name="type2" placeholder="Password" />
+            </div>
+            <center>
+                <button onclick="showPop()">Register</button>
+                <button onclick="closeReg()">Close</button>
+            </center>
+        </div>
     </div>
     <div id="header-wrapper">
         <div class="header">
-            ARTICLE
+            ARTICLE : .FEAST
         </div>
     </div>
     <div id="content-wrapper">
         <div class="content">
-            blablablablabla
+            <center><img src="images/feast_article.jpeg" alt=""></center>
+            <p style="text-align: center; font-size: 11px; font-style: italic;">source: https://www.cnnindonesia.com/hiburan/20180921125321-227-332011/feast-rilis-mini-album-sarat-makna-beberapa-orang-memaafkan</p>
+            <p>
+                Grup musik ini terbentuk dari sekumpulan mahasiswa Fakultas Ilmu Sosial dan Ilmu Politik (FISIP) Universitas Indonesia.
+                Pada tahun 2014, mereka merilis rilisan debut berjudul "Camkan". 
+                Singel tersebut berisi tentang kegelisahan terhadap kebebasan beragama di negeri Indonesia.
+            </p>
+            <p>
+                Mereka berencana merilis album berjudul Convictions, namun mereka memutuskan untuk vakum selama kurang lebih satu tahun. 
+                Mereka pun kembali dengan merilis singel berjudul "Wives of ゴジラ/Gojira (We Belong Dead)" dengan menggandeng penyanyi Janitra Satriani.
+                Pada Juli 2017, mereka merilis singel berjudul "Sectumsempra" bersama Yudhis dari grup musik Rachun.
+                Pada 18 September 2017, mereka merilis album perdana berjudul Multiverses, menampilkan berbagai kolaborator termasuk rapper Ramengvrl, vokalis Elephant Kind Bam Mastro, produser Mardial, penyanyi Oscar Lolang dan Haikal Azizi, dan banyak lagi.
+            </p>
+            <p>
+                Pada 13 Juli 2018, .Feast merilis singel utama untuk album kedua yang akan datang, berjudul "Peradaban".
+                Lalu, .Feast menggandeng penyanyi elektronik Rayssa Dynta pada singel kedua berjudul "Berita Kehilangan" yang dirilis pada 10 Agustus 2018. Singel ini bercerita tentang hal-hal nyata tentang kriminalisasi yang pernah terjadi di Indonesia, seperti kasus pemerkosaan, pemberontakan tanpa alasan, serta pelatihan bibit-bibit teroris.
+                Pada akhir tahun 2018, vokalis Baskara Putra turut berkarier solo dengan nama panggung Hindia. <i>(wikipedia)</i>
+            </p>
+            
+            
     </div>
 </body>
 </html>

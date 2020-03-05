@@ -87,7 +87,7 @@ a {text-decoration: none;}
     background: #559c12;
     padding: 10px;
     width: 100%;
-    margin-top: 157px;
+    margin-top: 168px;
     border: none;
     color: white;
     font-weight: bold;
@@ -113,15 +113,14 @@ a {text-decoration: none;}
 }
 
 .box input{
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 10px;
-    margin: 10px 0;
-    width: 70%;
+    margin-left: 55px;
+    margin-bottom: 10px;
     border: 1px solid #999;
     outline: none;
-    font-family: Oswald;
+    font-family: Open Sans;
     font-weight: bold;
-    margin-left: 14%;
 }
 
 .box input:focus{
@@ -132,14 +131,16 @@ a {text-decoration: none;}
 
 .box h2{
     text-align: center;
-    font-family: Oswald;
+    font-family: Open Sans;
     margin: 5px;
     color: white;
+    padding-top: 10px;
 }
 
 .container{
-    background:#060631b8; 
-    margin-left: 20%;
+    background:#242424b8; 
+    width: 300px;
+    margin-left: 40%;
     margin-right: 20%;
     margin-top: 10%;
 }
@@ -152,11 +153,7 @@ background: rgba(0,0,0,.7);
 top: 0;
 left: 0;
 z-index: 9999;
-visibility: hidden;
-}
-
-#popup:target {
-visibility: visible;
+display: none;
 }
 
 #popup2 {
@@ -167,50 +164,61 @@ background: rgba(0,0,0,.7);
 top: 0;
 left: 0;
 z-index: 9999;
-visibility: hidden;
+display: none;
 }
 
-#popup2:target {
-visibility: visible;
-}
-
-.submit-button a{
+#popup button{
     color: white;
-    width: 10%;
     padding: 10px;
-    border-radius: 20px;
-    font-size: 15px;
-    margin: auto;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: rgb(214, 44, 44);
-    font-family: Oswald;
-    font-weight: bold;
-    margin-left: 45%;
-}
-
-.submit-button input{
-    color: white;
-    width: 10%;
-    padding: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 15px;
     margin: 10px 0;
     border: none;
     outline: none;
     cursor: pointer;
     background-color: rgb(214, 44, 44);
-    font-family: Oswald;
+    font-family: Open Sans;
     font-weight: bold;
-    margin-left: 45%;
+}
+#popup button:hover {
+    background: rgb(250, 51, 51);
+    transition: .5s;
+}
+#popup button a{
+    color: white;
 }
 
-.submit-button h5{
+#popup2 button{
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(214, 44, 44);
+    font-family: Open Sans;
+    font-weight: bold;
+}
+#popup2 button:hover {
+    background: rgb(250, 51, 51);
+    transition: .5s;
+}
+#popup2 button a{
+    color: white;
+    text-decoration: underline;
+}
+
+#popup h5{
     text-align: center;
-    font-family: Oswald;
+    font-family: Open Sans;
     margin: 10px;
     color: white;
+}
+#popup h5 a{
+    color: white;
+    text-decoration: underline;
 }
 
 .close-button {

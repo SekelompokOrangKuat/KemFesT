@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/fstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="js/pjs.js"></script>
+    <script src="js/fjs.js"></script>
 </head>
 <body>
     <div id="navigation">
@@ -16,9 +16,36 @@
             <li><a href="ourteam.html">about us</a></li>
             <li><a href="#">faq</a></li>
             <li><a href="article.html">article</a></li>
-            <li><a href="#popup">login</a></li>
-            <li><a href="#popup2">register</a></li>
+            <li><a href="#" onclick="showPop()">login</a></li>
+            <li><a href="#" onclick="showReg()">register</a></li>
         </ul>
+    </div>
+    <div id="popup">
+        <div class="container">
+            <div class="box">
+                <h2 id="heading">Login</h2>
+                <input type="text" name="type1" placeholder="Username" />
+                <input type="text" name="type2" placeholder="Password" />
+            </div>
+                <center><button><a href="beranda.html">Login</a></button>
+                <button onclick="closePop()">Close</button>
+                </center>
+                <h5>Belum punya akun? <a href="#" onclick="showReg()">Daftar Sekarang!</a></h5>
+        </div>
+    </div>
+    <div id="popup2">
+        <div class="container">
+            <div class="box">
+                <h2 id="heading">Register</h2>
+                <input type="text" name="type1" placeholder="Email" />
+                <input type="text" name="type2" placeholder="Username" />
+                <input type="text" name="type2" placeholder="Password" />
+            </div>
+            <center>
+                <button onclick="showPop()">Register</button>
+                <button onclick="closeReg()">Close</button>
+            </center>
+        </div>
     </div>
     <div id="header-wrapper">
         <div class="header">
