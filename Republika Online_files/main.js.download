@@ -1,0 +1,415 @@
+/*MAIN.JS*/
+$(function(){
+    $('#home-terhangat,#home-other').attr("data-fixed","0").removeAttr('style');
+     $('.left-first').attr('data-hide','0');
+   // console.log(_other_pos);
+})
+var exclude_kanal=['video','infografis'];
+
+    // var _other_pos=get_top_position($('#home-other'));
+    
+     if($('body').attr('data-type')=='home' || $('body').attr('data-type')=='kanal' && (exclude_kanal.includes($('body').attr('id'))==false) ){
+     
+     if($('#home-other').length>0){
+        var _other_pos =$('#home-other').offset().top;
+     }
+      $(window).scroll(function() {
+        //console.log(_other_pos);
+            /* fixed div */
+        /*  console.log('FOOTER:'+get_top_position($('.wrap_footer')));
+         console.log('home-terhangat:'+get_top_position($('#home-terhangat')));
+         console.log('TERKINI:'+get_top_position($('#home-terkini')));*/
+         
+             
+           // console.log($('body').scrollTop() + 100 +'###');
+             // console.log(_other_pos);
+            if($('#home-terhangat').length>0){
+              if(get_top_position($('#home-terhangat'))<=85 && get_top_position($('.wrap_footer'))>640){
+                  if($('#home-terhangat').attr("data-fixed")=="0"){
+                   tahan(0,$('#home-terhangat'),85)
+                  }
+              }
+              if(get_top_position($('.wrap_footer'))<=640 && $('#home-terhangat').attr("data-fixed")=="1"){
+                   lepas(1,$('#home-terhangat'));
+                  
+              }
+               if(get_top_position($('#home-terkini'))>1 && $('#home-terhangat').attr("data-fixed")=="1"){
+                  //console.log('456');
+                   lepas(0,$('#home-terhangat'))
+                 
+              }
+            }
+
+            if($('.header2')){
+              _h =parseInt($('.header2').height());
+            }
+            else{
+                _h=100;
+            }
+            
+            if($('#home-other').length>0){
+              if(get_top_position($('#home-other'))<=_h  && get_top_position($('.wrap_footer'))>640 && $('#home-other').attr("data-fixed")=="0"){
+                   tahan(0,$('#home-other'),_h)
+                   $('#home-other').css('width','300px');
+              }
+             
+              if(get_top_position($('.wrap_footer'))<=640 && $('#home-other').attr("data-fixed")=="1"){
+                  // $('#home-other').css('width','');
+                   lepas(1,$('#home-other'));
+
+                  
+              }
+              if($(this).scrollTop() <=_other_pos && $('#home-other').attr("data-fixed")=="1" && get_top_position($('.wrap_footer'))>640){
+                  //console.log('456');
+                   lepas(0,$('#home-other'));
+                   $('#home-other').css('width','');
+
+                 
+              }
+          }
+            if($('body').attr('data-type')=='home'){
+                if(get_top_position($('#home-video'))<=756 &&  $('.left-first').attr('data-hide')=="0"){
+                    var _top=get_top_position($('#home-terhangat')) + $('.left-first').height();
+                  // console.log("TOPP"+_top);
+                    $('.left-first').attr('data-hide','1').slideUp();
+                   // $('#home-terhangat').animate({ top: '-='+_top+'px'},"slow");
+          
+                }
+                 if(get_top_position($('#home-video'))>756 &&  $('.left-first').attr('data-hide')=="1"){
+                    $('.left-first').attr('data-hide','0').slideDown();
+
+                 }
+           }
+          
+        }
+     );
+  }
+
+function tahan(animasi,_elem_,topPos){
+  if(animasi==0){
+      _elem_.css({'position':'fixed',top:topPos+'px'}).attr('data-fixed','1');
+     
+  }
+  if(animasi==1){
+     _elem_.attr('data-fixed',"1").animate({ top:topPos+'px'},{     
+               duration: 1500,
+               complete: function(){
+                              $(this).css('position','fixed');
+                          }
+              })
+}   
+  return false;
+}
+function lepas(animasi,_elem_){
+    if(animasi==1){
+          _elem_.attr('data-fixed',"0").animate({ top: '-=10000px'},{     
+               duration: 1500,
+               complete: function(){
+                  $(this).css('position','');
+              }
+          });
+      }
+      else{
+         _elem_.css({'position':'',top:'-=1000px'}).attr('data-fixed','0');
+      }
+      return false;
+    
+}
+function get_top_position(_elem_) {
+   // console.log(_elem_);
+    var offset = _elem_.offset();
+    var w = $(window);
+    return parseInt(offset.top - w.scrollTop());
+}
+
+$('.loadmore').click(function(){
+  
+    loadmore($(this).attr('rel'));
+})
+
+
+function loadmore(param) {
+      _limit_load = 60;
+      count       = $('.conten1').length;
+      if(_limit_load <= count){
+            $('.wrap-latest').append('<a href="/indeks/">Selengkapnya</a>');
+                  $('.loadmore').hide();
+            
+
+      }
+      else{
+
+        var result= param.split('|');
+        var slug = (result[0] == "latest") ? false : result[0];
+        var parent = result[1];
+        var showparent = result[2];
+        var view=result[3];
+
+
+       if (view === undefined || view === null) {
+          views='load_more';
+        }
+        else
+          views=view;
+
+         
+        if(parent=='video' )
+          count   = $('.wrap_kanaltv_set').length;
+
+         if(_limit_load <= count){
+            $('.wrap-latest').append('<a href="/indeks/">Selengkapnya</a>');
+                  $('.loadmore').hide();
+            return false;  
+          }
+
+          $.ajax({
+              type: "GET",
+              url: "/ajax/latest_news/10/" + count + '/' + slug + '/'+views+'/' + parent + '/' + showparent,
+              beforeSend: function(xhr) {
+                  $('#loading-terkini').show();
+                  hold = count;
+                  $('.loadmore').hide();
+              },
+              success: function(html) {
+                  $('.loadmore').show();
+                  $('#loading-terkini').hide();
+                  $('.wrap-latest').append(html);
+                 
+
+              }
+          });
+      }
+    }
+
+
+if($('body').attr('data-type')=='detail' ) {
+    
+     $('.sosmed_share,.bigads').attr('data-fixed','0');
+      if($('#livetv').length==1){
+          $URL= window.location.href
+      }
+      else{
+         $URL = 'https://republika.co.id/share/'+$('#news-id').val();
+      }
+     
+      var share_count = 10;
+      var tw,fb,comment,share = 0; 
+      // Facebook Shares Count
+     // console.log('http://graph.facebook.com/?id=' + $URL);
+      var token_='EAAF7ZCqyi1wkBANxIRVNumxVI8AZBM67OCdsZCHfOBaTej9g5ZAMARDJ9HYZCiX8xF0NoMcx0ZCtZBhSJnGtBfQhtdfD7M4UXgLoxnelxvqZAIx14KVggufHr4TKVXfoPsy690jp1NoQ3DyvKE4uS5tufOzXHDC9owDIoUsQ6R8nPwZDZD';
+     $.getJSON('https://graph.facebook.com/v3.2/?id=' + $URL+'&fields=engagement&access_token='+token_, function(fbdata) {
+          console.log(fbdata);
+          $('.facebook span').text(ReplaceNumberWithCommas(fbdata.engagement.share_count))
+         // console.log('FB:'+fbdata);
+          comment = (fbdata.engagement.comment_plugin_count) ? fbdata.engagement.comment_plugin_count : 0; 
+        
+          $('.fa-comments span').text(ReplaceNumberWithCommas(comment));
+          $('.comment-count').html(comment);
+          fb = parseInt(fbdata.engagement.share_count);
+          if(!tw) tw = 0;  
+          if(!fb) fb = 0;  
+          
+          //share = fb+tw;
+          share = fb;
+      
+          //console.log("share fb" + share);
+          $('#fbshare').text(share);
+          // SHARE COUNT
+          fbdata.newsid=$('#news-id').val();
+           $.ajax({
+              type: "POST",
+              url: "/ajax/sosmed_count",
+              data:fbdata,
+              beforeSend: function(xhr) {
+                 
+              },
+              success: function(html) {
+                 console.log(html);
+                 
+
+              }
+          });
+      });
+     
+      /*url_comment =  window.location.href;
+     
+      $.getJSON('http://graph.facebook.com/?id=' + url_comment, function(fbdata) {
+         // console.log("share fb2 ");
+          //console.log(fbdata);
+          comment = (fbdata.engagement.comment_count) ? fbdata.engagement.comment_count : 0; 
+          $('.komentar span').text(ReplaceNumberWithCommas(comment))
+      });*/
+       if($('.bigads').length>=1){
+            var _bigads_pos =$('.bigads').offset().top;
+          }
+      $(window).scroll(function() {
+       
+        //console.log(get_top_position($('.wrap_footer')));
+         //console.log('FOOTER:'+get_top_position($('.wrap_footer')));
+         //console.log('SOSMED:'+get_top_position($('.sosmed_share')));
+         //console.log('set_conten_detail:'+get_top_position($('.set_conten_detail')));
+         // console.log($(this).scrollTop());
+          if(get_top_position($('.sosmed_share'))<=130 && $('.sosmed_share').attr("data-fixed")=="0" && get_top_position($('.wrap_footer'))>700 ){
+             tahan(0,$('.sosmed_share'),130)
+          }
+          if(get_top_position($('.set_conten_detail'))>=130 && $('.sosmed_share').attr("data-fixed")=="1"  && get_top_position($('.wrap_footer'))>700){
+            lepas(0,$('.sosmed_share'))
+          }
+         if(get_top_position($('.wrap_footer'))<=700  && $('.sosmed_share').attr("data-fixed")=="1"){
+            lepas(1,$('.sosmed_share'))
+             //$('.sosmed_share').css('position','');
+                
+          }
+           if(get_top_position($('.wrap_footer'))>700  && $('.sosmed_share').attr("data-fixed")=="0" && get_top_position($('.sosmed_share'))<=130 ){
+            tahan(1,$('.sosmed_share'),130)
+                
+          }
+          
+          
+          if(get_top_position($('.bigads'))<=100  && get_top_position($('.wrap_footer'))>700 && $('.bigads').attr("data-fixed")=="0"){
+                 tahan(0,$('.bigads'),100)
+                 $('.bigads').css('width','300px');
+            }
+           
+            if(get_top_position($('.wrap_footer'))<=700 && $('.bigads').attr("data-fixed")=="1"){
+                // $('.bigads').css('width','');
+                 lepas(1,$('.bigads'));
+
+                
+            }
+            if($(this).scrollTop() <=_bigads_pos && $('.bigads').attr("data-fixed")=="1" && get_top_position($('.wrap_footer'))>700){
+                //console.log('456');
+                 lepas(0,$('.bigads'));
+                 $('.bigads').css('width','');
+
+               
+            }
+         
+          
+        
+
+      })
+
+
+if($(".twitter-tweet , .twitter-video ").length > 0)
+        $("<script>").attr({type: 'text/javascript', src: 'https://platform.twitter.com/widgets.js'}).prependTo("head");
+if($(".instagram-media").length > 0)
+        $("<script>").attr({type: 'text/javascript', src: '//platform.instagram.com/en_US/embeds.js'}).prependTo("head");
+    
+      // LinkIn Shares Count
+  }
+  
+  function ReplaceNumberWithCommas(yourNumber) {
+    //console.log(yourNumber
+     
+    if(!yourNumber) return 0 ;
+    //Seperates the components of the number
+    var components = yourNumber.toString().split(".");
+    //Comma-fies the first part
+    components[0] = components[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //Combines the two sections
+    return components.join(".");
+}
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+  textArea.style.padding = 0;
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+  textArea.style.background = 'transparent';
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    alert('Berhasil mengcopy url ' + msg);
+  } catch (err) {
+    alert('Gagal mengcopy url, Silahkan coba kembali');
+  }
+  document.body.removeChild(textArea);
+}
+  $(function(){
+    $('.copyLink').click(function(){
+      copyTextToClipboard($(this).attr('data-href'));
+    })
+  })
+
+$('.sosmed-popup').click(function() {
+  
+     url = $(this).attr('rel');
+     window.open(url, "_blank", "toolbar=no, scrollbars=no, resizable=yes, top=500, left=500, width=500, height=400");
+
+});
+ $(function() {
+         if ( document.location.href.indexOf('#login') > -1 ) {
+            $('body').append("<div class='alert alert-error'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Login Gagal</strong> Periksa Kembali data yang anda masukkan"
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+            $('#login').trigger('click');
+           
+        } else if ( document.location.href.indexOf('#registered') > -1 ) {
+            $('body').append("<div class='alert alert-error'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Email Sudah Ada</strong> Periksa Kembali Email Dan Password yang anda masukkan  "
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+        
+        } else if ( document.location.href.indexOf('#register') > -1 ) {
+            $('body').append("<div class='alert alert-error'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Register Gagal</strong> Periksa Kembali data yang anda masukkan  "
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+        
+        } else if ( document.location.href.indexOf('#success') > -1 ) {
+            $('body').append("<div class='alert alert-success'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Login / Register Berhasil</strong> "
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+           
+        }else if ( document.location.href.indexOf('#successv') > -1 ) {
+            $('body').append("<div class='alert alert-success'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Register Berhasil</strong> Silakan Periksa email Anda untuk verifikasi Akun"
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+           
+        } else if ( document.location.href.indexOf('#vlogin') > -1 ) {
+            $('body').append("<div class='alert alert-error'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Anda Belum Memverifikasi Akun</strong> Silakan periksa Email anda"
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+           
+        } else if ( document.location.href.indexOf('#unverify') > -1 ) {
+            $('body').append("<div class='alert alert-error'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Kode Verifikasi Salah</strong> "
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+           
+        } else if ( document.location.href.indexOf('#verify') > -1 ) {
+            $('body').append("<div class='alert alert-success'>"
+                        + "<a class='dismiss' >Ã—</a>"
+                        + "<strong>Akun anda berhasil diverifikasi</strong> Silahkan login menggunakan email anda"
+                        + "</div>");
+            $(".alert").fadeIn("slow");
+           
+        }
+         $(document).on('click', '.dismiss', function(){
+            $(".alert").fadeOut("slow");
+         });
+
+        if(window.location.href.indexOf("rakyatku") > -1){ console.log(window.location.href); }
+         
+    });
+ 
