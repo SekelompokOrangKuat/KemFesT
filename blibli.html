@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>blibli</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="table-responsive">
+            <h1>BliBli Online</h1>
+            <br>
+            
+            <table class="table table-bordered table-stripd" id="employee_table">
+                <tr style="background: rgb(105, 105, 253);color:white;">
+                    <th>Images</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>City</th>
+                    <th>Offer</th>
+                    <th>Brand</th>
+                </tr>
+            </table>
+        </div>
+    </div>    
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $.getJSON("blibli.json", function(data){
+            var ini = '';
+            $.each(data, function(key, value){
+                ini += '<tr>';
+                ini += '<td>'+ '<img src="' + value.brand_img+ '">' + '</td>'
+                ini += '<td>'+value.name+'</td>'
+                ini += '<td>'+value.price+'</td>'
+                ini += '<td>'+value.city+'</td>'
+                ini += '<td>'+value.offer+'</td>'
+                ini += '<td>'+value.brand+'</td>'
+                ini += '</tr>'
+            });
+            $('#employee_table').append(ini);
+        });
+    });
+</script>
