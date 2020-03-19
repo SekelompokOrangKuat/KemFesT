@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0038)https://republika.co.id/jadwal-sholat/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Jadwal Sholat,Waktu Sholat Republika</title>
+<meta name="description" content="jadwal sholat atau waktu sholat wilayah DKI Jakarta dan kota-kota besar di seluruh Indonesia">
+<meta name="keywords" content="jadwal sholat, waktu sholat,jadwal shalat, waktu shalat,DKI Jakarta, Indonesia">
+<script type="text/javascript" async="" src="./analytics.js.download"></script><script type="text/javascript" src="./jquery.min.1.11.js.download"></script>
+<script src="./jquery.bxslider.js.download"></script>
+<script type="text/javascript" src="./selectkota.js.download"></script>
+<link href="./jquery.bxslider(1).css" rel="stylesheet">
+
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+
+
+.body {
+  font-family:"Open Sans", Arial, Helvetica, sans-serif;
+ }
+.wrap-jadsol{
+  width:300px;
+  height:250px;
+  margin:0 auto !important;
+    position: relative;
+}
+.bx-wrapper {
+position: relative;
+margin: -16px auto;
+padding: 0px;
+}
+.wrap-jadsol .bx-wrapper .bx-viewport{
+    box-shadow:none !important;
+    -webkit-box-shadow: none;
+    height:auto !important;
+    border:none;
+    background-color:transparent;
+    left:0;
+}
+.wrap-jadsol .bx-wrapper .bx-controls-direction a {
+  top: 60%;
+}
+.wrap-jadsol .bx-wrapper .bx-pager{
+  display:none;
+}
+.jadsol{
+  width:300px;
+  height:250px;
+}
+.subuh{
+  background:url(https://static.republika.co.id/files/jadsol/images/subuh.png) no-repeat center center;
+}
+.dzuhur{
+  background:url(https://static.republika.co.id/files/jadsol/images/dzuhur.png) no-repeat center center;
+}
+.ashar{
+  background:url(https://static.republika.co.id/files/jadsol/images/ashar.png) no-repeat center center;
+}
+.maghrib{
+  background:url(https://static.republika.co.id/files/jadsol/images/maghrib.png) no-repeat center center;
+}
+.isya{
+  background:url(https://static.republika.co.id/files/jadsol/images/isya.png) no-repeat center center;
+}
+.jadsol-top-right {
+    font-size: 11px;
+    font-family: "Open Sans";
+    color: #ffffff;
+    position: absolute;
+    text-align: right;
+    right: 23px;
+    top: 40px;
+    z-index: 1;
+    right: 7px;
+}
+.jadsol select{
+    font-size: 12px;
+    border: none;
+    border-radius: 0px;
+    padding: 1px;
+    margin: 5px auto;
+  width:110px !important;
+}
+option{
+    color: #000000 !important;
+}
+.jadsol-center{
+  text-align:center;
+  margin-top:33%;
+}
+.jadsol-center h2{
+    font-size: 50px;
+    font-weight: 600;
+    font-family: "Open Sans";
+    color: #ffffff;
+    letter-spacing: -5px;
+    margin: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+.jadsol-center .time{
+  font-family:"Open Sans";
+  font-size:20px; 
+    color:#ffffff;
+  padding:0;
+  margin:-10px 0 0;
+}
+.jadsol-bottom{
+  font-family:"Open Sans";
+  font-size:10px;
+  color:#ffffff;  
+    margin:20px auto;
+    text-align: center;
+  text-transform:uppercase;
+}
+.jadsol-bottom input{ 
+    width: 195px;
+    background: none;
+    color: #fff;
+    font-size: 9px;
+    border-top: 1px dotted #f2f2f2;
+    border-bottom: 1px dotted #f2f2f2;
+    border-right: none;
+    border-left: none;
+}
+.source{
+   position: absolute;
+    z-index: 5;
+    top: 77px;
+    font-family: "Open Sans";
+    font-size: 11px;
+    color: #ffffff;
+    margin-left: 69px;
+    font-weight: 400;
+    opacity: 0.8;
+    float: right;
+    right: 7px;
+}
+.source a{
+    color: #FFF;
+    text-decoration: none;
+}
+#jadwal_kota {
+    font-size: 12px !important;
+    margin: 5px auto;
+    width: 95px !important;
+    height: 25px !important;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    padding: 0 5px;
+    background: transparent;
+    color: #ffffff !important;
+    border: 1px solid #ffffff;
+    letter-spacing: 0.5px;
+}
+#jadwal-link{
+  background: rgba(0,0,0,0);
+    position: absolute;
+    width: 180px;
+    height: 78px;
+    z-index: 1;
+}
+#jadwal-link a{
+  width: 100%;
+    height: 100%;
+     background: rgba(0,0,0,0);
+    position: absolute;
+}
+h2 a {
+    color: #ffffff;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body style="margin:15px 0px 0px 0px  !important">
+<div class="wrap-jadsol">
+<div class="jadsol-top-right">
+        <div class="date">Monday, 09 Mar 2020</div> 
+        <div class="time">14:10:24</div>
+        <select name="kota" style="width: 80px; color:#666; font-size:11px;" id="jadwal_kota">
+                         
+                                                    <option value="1">jakarta </option>
+                                                    <option value="3">banda aceh </option>
+                                                    <option value="4">bali </option>
+                                                    <option value="5">balikpapan </option>
+                                                    <option value="6">bandar Lampung </option>
+                                                    <option value="7">bandung </option>
+                                                    <option value="8">banjarmasin </option>
+                                                    <option value="9">bengkulu </option>
+                                                    <option value="10">kota jayapura </option>
+                                                    <option value="11">aceh barat </option>
+                                                    <option value="13">tuban </option>
+                                                    <option value="14">tegal </option>
+                                                    <option value="18">gorontalo </option>
+                                                    <option value="19">yogyakarta </option>
+                                                    <option value="21">palangkaraya </option>
+                                                    <option value="22">pontianak </option>
+                                                    <option value="23">padang </option>
+                                                    <option value="24">medan </option>
+                                                    <option value="25">mataram </option>
+                                                    <option value="26">manado </option>
+                                                    <option value="28">garut </option>
+                                                    <option value="29">depok </option>
+                                                    <option value="32">jambi </option>
+                                                    <option value="33">sukabumi </option>
+                                                    <option value="34">tangerang </option>
+                                                    <option value="35">batam </option>
+                                                    <option value="36">bekasi </option>
+                                                    <option value="37">bogor </option>
+                                                    <option value="38">bukittinggi </option>
+                                                    <option value="40">bontang </option>
+                                                    <option value="41">cilacap </option>
+                                                    <option value="42">dumai </option>
+                                                    <option value="43">jayapura </option>
+                                                    <option value="46">kediri </option>
+                                                    <option value="47">klaten </option>
+                                                    <option value="48">kudus </option>
+                                                    <option value="49">surabaya </option>
+                                                    <option value="51">palembang </option>
+                                                    <option value="52">malang </option>
+                                                    <option value="53">semarang </option>
+                                                    <option value="55">banten </option>
+                                                    <option value="56">blitar </option>
+                                                    <option value="57">salatiga </option>
+                                                    <option value="58">purwodadi </option>
+                                                    <option value="59">indramayu </option>
+                                                    <option value="60">purwokerto </option>
+                                                    <option value="61">magetan </option>
+                                                    <option value="63">makassar </option>
+                                                    <option value="64">jombang </option>
+                                                    <option value="65">tasikmalaya </option>
+                                                                            <!-- <option value="" > </option> -->
+                                                                </select>
+</div>
+
+<div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 250px;"><ul class="jadwal-shalat" style="width: 715%; position: relative; transition-duration: 0.5s; transform: translate3d(-640px, 0px, 0px);">
+
+  <li class="jadsol subuh" style="float: left; list-style: none; position: relative; width: 300px;">
+  <div><h3 class="time source"> <a target="_parent" href="https://republika.co.id/">republika.co.id</a></h3></div>
+  	
+    <div class="jadsol-center">
+    	<h2><a target="_blank" href="https://www.republika.co.id/ramadhan/imsakiyah_print/dki+jakarta-kota+jakarta">subuh</a></h2>
+        <div class="time" id="time-subuh">04:42</div>
+    </div>
+    <div class="jadsol-bottom">
+    	<span>embed</span> <input type="text" readonly="readonly" value="&lt;iframe src=&quot;https://www.republika.co.id/jadwal-sholat/&quot; scrolling=&quot;no&quot; width=&quot;300&quot; height=&quot;250&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot;&gt;&lt;/iframe&gt;" class="form-control" size="12" onclick="this.focus(); this.select();" name="textfield" id="textfield">
+    </div>
+  </li>
+  <li class="jadsol dzuhur" style="float: left; list-style: none; position: relative; width: 300px;">
+  <div><h3 class="time source"> <a target="_parent" href="https://republika.co.id/">republika.co.id</a></h3></div>
+  	
+    <div class="jadsol-center">
+    	<h2><a target="_blank" href="https://www.republika.co.id/ramadhan/imsakiyah_print/dki+jakarta-kota+jakarta">Zhuhur</a></h2>
+        <div class="time" id="time-dzuhur">12:06</div>
+    </div>
+    <div class="jadsol-bottom">
+    	<span>embed</span> <input type="text" readonly="readonly" value="&lt;iframe src=&quot;https://www.republika.co.id/jadwal-sholat/&quot; scrolling=&quot;no&quot; width=&quot;300&quot; height=&quot;250&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot;&gt;&lt;/iframe&gt;" class="form-control" size="12" onclick="this.focus(); this.select();" name="textfield" id="textfield">
+    </div>
+  </li>
+  <li class="jadsol ashar" style="float: left; list-style: none; position: relative; width: 300px;">
+  <div><h3 class="time source"> <a target="_parent" href="https://republika.co.id/">republika.co.id</a></h3></div>
+  
+    <div class="jadsol-center">
+    	<h2><a target="_blank" href="https://www.republika.co.id/ramadhan/imsakiyah_print/dki+jakarta-kota+jakarta">ashar</a></h2>
+        <div class="time" id="time-ashar">15:11</div>
+    </div>
+    <div class="jadsol-bottom">
+    	<span>embed</span> <input type="text" readonly="readonly" value="&lt;iframe src=&quot;https://www.republika.co.id/jadwal-sholat/&quot; scrolling=&quot;no&quot; width=&quot;300&quot; height=&quot;250&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot;&gt;&lt;/iframe&gt;" class="form-control" size="12" onclick="this.focus(); this.select();" name="textfield" id="textfield">
+    </div>
+  </li>
+  <li class="jadsol maghrib" style="float: left; list-style: none; position: relative; width: 300px;">
+  <div><h3 class="time source"> <a target="_parent" href="https://republika.co.id/">republika.co.id</a></h3></div>
+  	
+    <div class="jadsol-center">
+    	<h2><a target="_blank" href="https://www.republika.co.id/ramadhan/imsakiyah_print/dki+jakarta-kota+jakarta">maghrib</a></h2>
+        <div class="time" id="time-maghrib">18:11</div>
+    </div>
+    <div class="jadsol-bottom">
+    	<span>embed</span> <input type="text" readonly="readonly" value="&lt;iframe src=&quot;https://www.republika.co.id/jadwal-sholat/&quot; scrolling=&quot;no&quot; width=&quot;300&quot; height=&quot;250&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot;&gt;&lt;/iframe&gt;" class="form-control" size="12" onclick="this.focus(); this.select();" name="textfield" id="textfield">
+    </div>
+  </li>
+  <li class="jadsol isya" style="float: left; list-style: none; position: relative; width: 300px;">
+  <div><h3 class="time source"> <a target="_parent" href="https://republika.co.id/">republika.co.id</a></h3></div>
+  	
+    <div class="jadsol-center">
+    	<h2><a target="_blank" href="https://www.republika.co.id/ramadhan/imsakiyah_print/dki+jakarta-kota+jakarta">isya</a></h2>
+        <div class="time" id="time-isya">19:20</div>
+    </div>
+    <div class="jadsol-bottom">
+    	<span>embed</span> <input type="text" readonly="readonly" value="&lt;iframe src=&quot;http://www.republika.co.id/jadwal-sholat/&quot; scrolling=&quot;no&quot; width=&quot;300&quot; height=&quot;250&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot;&gt;&lt;/iframe&gt;" class="form-control" size="12" onclick="this.focus(); this.select();" name="textfield" id="textfield">
+    </div>
+  </li>
+ </ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="https://republika.co.id/jadwal-sholat/">Prev</a><a class="bx-next" href="https://republika.co.id/jadwal-sholat/">Next</a></div></div></div>
+ <div id="salat-pager" style="display:none">
+
+  <a data-slide-index="0" id="Fajr-page" href="https://republika.co.id/jadwal-sholat/" class="">subuh</a>
+  <a data-slide-index="1" id="Dhuhr-page" href="https://republika.co.id/jadwal-sholat/">zuhur</a>
+  <a data-slide-index="2" id="Asr-page" href="https://republika.co.id/jadwal-sholat/" class="active">ashar</a>
+  <a data-slide-index="3" id="Maghrib-page" href="https://republika.co.id/jadwal-sholat/">magribh</a>
+  <a data-slide-index="4" id="Isha-page" href="https://republika.co.id/jadwal-sholat/">Isya</a>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+  $('.jadwal-shalat').bxSlider(
+    {
+        pagerCustom: '#salat-pager',
+        infiniteLoop:false,
+    });
+  get_time_salat();
+});
+</script>
+    <script>
+	/*
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3730146-1', 'auto');
+  ga('send', 'pageview');
+*/
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./js(2)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-3730146-1');
+</script>
+<script>
+$(function(){
+    $('#jadwal_kota').change(function(){
+        get_time_salat();
+    })
+})
+     function get_time_salat(){
+         $.ajax({
+        type: "GET",
+                url: "getkota.php", 
+                data:{vq:$('#jadwal_kota').val(),jenis:'desktop-new',sid:Math.random()},
+                 beforeSend:function(){
+                       // $('#daftar-jadwal').html('<div align="center" class="row col-md-12" style="background-color:#EEE"><img src="../files/images/loader_48.gif" align="center"></div>');
+                 },
+                success: function (data) {
+                        //$('#daftar-jadwal').html(data);
+                   
+                        var obj=jQuery.parseJSON(data);
+                        $('#time-subuh').html(obj.Fajr);
+                        $('#time-dzuhur').html(obj.Dhuhr);
+                        $('#time-ashar').html(obj.Asr);
+                        $('#time-maghrib').html(obj.Maghrib);
+                        $('#time-isya').html(obj.Isha);
+                        $('#'+obj.waktu+'-page').click();
+
+                }   
+                
+            })
+     }
+    
+</script>
+
+
+</body></html>
